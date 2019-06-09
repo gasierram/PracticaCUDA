@@ -16,7 +16,7 @@ echo "         img1 720p                " >> mediciones.txt
 echo "----------------------------------" >> mediciones.txt
 echo -e "Kernel\tTime" >> mediciones.txt
 kernel=3
-while [ "$kernel" -lt 16 ]
+while [ [ "$kernel" -lt 16 ] ]
     do
     echo -ne $kernel "\t" >> mediciones.txt
     { time ./blur-effect.out img1.jpg img1-blur.jpg $kernel 1 1>/dev/null 2>&1; } 2>> mediciones.txt
