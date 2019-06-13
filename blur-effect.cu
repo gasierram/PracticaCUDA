@@ -29,7 +29,7 @@ int main(int argc, char** argv){
     cudaMalloc(&width_d, sizeof(int));
     cudaMalloc(&kernel_d, sizeof(int));
   
-    if (argc != 5){
+    if (argc != 4){
         printf("error en argumentos");
         return -1;
     }
