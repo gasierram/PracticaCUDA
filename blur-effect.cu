@@ -30,20 +30,20 @@ int main(int argc, char** argv){
     cudaMalloc(&kernel_d, sizeof(int));
   
     if (argc != 5){
-        printf("error");
+        printf("error en argumentos");
         return -1;
     }
 
     image = imread(argv[1], 1);
 
     if ( !image.data ){
-        printf("error");
+        printf("error en image data");
         return -1;
     }
 
-    kernel = atoi(argv[2]);
-    num_threads = atoi(argv[3]);
-    num_blocks = atoi(argv[4]);
+    kernel = atoi(argv[3]);
+    num_threads = atoi(argv[4]);
+    num_blocks = atoi(argv[5]);
 
     height = image.size().height;
     width = image.size().width;
@@ -89,7 +89,7 @@ int main(int argc, char** argv){
     
 
     string file_name;
-    file_name = argv[5];
+    file_name = argv[2];
     imwrite(file_name, result);
     
     free(image_mat);
